@@ -1,3 +1,6 @@
+# Android tools in path
+set -gx PATH /home/jibbo/Android/Sdk/platform-tools  $PATH
+
 # Removes the fish greeting
 function fish_greeting
 end
@@ -33,4 +36,13 @@ end
 #Replaces the fish prompt
 function fish_prompt
 	printf '%s%s>' (better_pwd) (git_info)
+end
+
+#Alias
+function ssh-mount-homebot
+    sshfs pi@192.168.1.121:/home/pi/casa_defra_tac_bot projects/homebot
+end
+
+function ssh-mount-webadmin
+    sshfs pi@192.168.1.121:/home/pi/webadmin projects/webadmin
 end
